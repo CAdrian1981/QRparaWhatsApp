@@ -1,0 +1,17 @@
+{
+    "name": "whatsapp-webhook",
+    "version": "1.0.0",
+    "description": "Servidor Node.js para enviar mensajes de WhatsApp usando whatsapp-web.js y Webhooks",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "dependencies": {
+      "express": "^4.18.2",
+      "qrcode-terminal": "^0.12.0",
+      "whatsapp-web.js": "^1.18.4"
+    },
+    "author": "VozIPyme",
+    "license": "MIT"
+  }
+  
