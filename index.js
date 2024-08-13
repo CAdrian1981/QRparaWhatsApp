@@ -1,13 +1,11 @@
-const { Client, LocalAuth } = require('whatsapp-web.js');
-const qrcode = require('qrcode-terminal');
+const { Client } = require('whatsapp-web.js');
 const express = require('express');
+const qrcode = require('qrcode-terminal');
 
 const app = express();
 app.use(express.json());
 
-const client = new Client({
-    authStrategy: new LocalAuth()
-});
+const client = new Client();
 
 client.on('qr', (qr) => {
     qrcode.generate(qr, { small: true });
@@ -36,5 +34,4 @@ app.post('/webhook', (req, res) => {
     });
 });
 
-// No se especifica el puerto directamente, Vercel lo maneja
 module.exports = app;
